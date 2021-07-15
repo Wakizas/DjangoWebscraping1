@@ -1,0 +1,96 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Top navbar example · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/navbar-top.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">Cool project</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container">
+<!--Messages with style-->
+ <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+  <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+  </svg>
+{% if messages %}
+<div class="alert alert-primary alert-dismissible fade show d-flex align-items-center col-md-8 mb-2" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+  <div>
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+{% endif %}
+<form action="login" method='POST'>
+    {% csrf_token %}
+  <div class="row mb-3">
+    <label for="username_email" class="col-sm-2 col-form-label">Username/E-mail</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="username_email" name="username_email" required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="password" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-6">
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</main>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+      
+  </body>
+</html>

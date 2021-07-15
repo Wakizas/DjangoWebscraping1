@@ -1,0 +1,89 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Accueil | Cool project</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/navbar-top.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">Cool Project</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="images">Images</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- Page Content -->
+<div class="container">
+
+  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Github User Profile Pictures</h1>
+  <hr class="mt-2 mb-5">
+  <div class="row text-center text-lg-left">
+    {% for image in images %}
+    <div class="col-lg-3 col-md-4 col-6">
+      <a target='_blank' href="{{ link }}{{ image.githubuser }}" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ image.imagelink }}" alt="">
+        </a>
+    </div>
+    {% empty %}
+    <div class="col-lg-3 col-md-4 col-6">
+        <p>No pictures here!</p>
+    </div>
+    {% endfor %}
+</div>
+
+</main>
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+      
+  </body>
+</html>

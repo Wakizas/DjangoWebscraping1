@@ -1,0 +1,121 @@
+#form-container {
+    margin-left: 28%;
+    width: 600px;
+    height: 300px;
+    background-color: none;
+    border: 1px #ff5722 solid;
+}
+
+#titile {
+    margin-left: 28%;
+    width: 602px;
+    height: 30px;
+    background-color: #ff5722;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 250px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 3.50%;
+}
+
+input[type="submit"] {
+    width: 500px;
+    height: 30px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff6d3f;
+}
+
+fieldset {
+    width: 600px;
+    margin-left: 28%;
+    height: 200px;
+    margin-top: 15%;
+}
+
+h4 {
+    color: white;
+    text-align: center;
+}
+
+#show-password {
+    margin-left: 150px;
+    font-family: sans-serif;
+}
+
+span {
+    color: white;
+    background-color: #f34747c7;
+    border-bottom: 3px solid red;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+#password-message {
+    margin-left: 28%;
+    width: 600px;
+    height: 200px;
+    background-color: solid;
+    border: 1px #ff5722 solid;
+    display: none;
+    margin-top: 1px;
+}
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    margin-left: 50px;
+}
+
+label {
+    color: gray;
+    font-style: bold;
+}
+
+#signup {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration-style: double;
+    text-decoration-line: unset;
+    text-rendering: auto;
+}
+
+input[type="checkbox"] {
+    margin-left: 7px;
+}
